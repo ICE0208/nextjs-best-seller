@@ -1,12 +1,17 @@
+import { useRouter } from "next/router";
 import Main from "../components/main";
 
 export default function IndexPage({ data }) {
+  const router = useRouter();
   return (
     <Main>
       <div className="container">
         {data.map((item, index) => (
           <div
             className="item"
+            onClick={() => {
+              router.push(`/list/${item.list_name_encoded}`);
+            }}
             key={index}
           >
             {item.display_name} &rarr;
@@ -27,6 +32,7 @@ export default function IndexPage({ data }) {
             box-sizing: border-box;
             -webkit-box-shadow: --4px 6px 10px -4px rgba(0, 0, 0, 0.75);
             -moz-box-shadow: --4px 6px 10px -4px rgba(0, 0, 0, 0.75);
+            cursor: pointer;
           }
         }
       `}</style>
