@@ -13,14 +13,10 @@ export default function AboutPage() {
       </div>
       <style jsx>{`
         .container {
-          width: 60%;
+          width: 100%;
           margin: 0 auto;
-          border: 2px solid rgba(0, 0, 0, 0.15);
           padding: 34px;
-          box-shadow: -9px 11px 36px -8px rgba(0, 0, 0, 0.75);
           box-sizing: border-box;
-          -webkit-box-shadow: -9px 11px 36px -8px rgba(0, 0, 0, 0.75);
-          -moz-box-shadow: -9px 11px 36px -8px rgba(0, 0, 0, 0.75);
           .title {
             font-size: 34px;
             padding: 10px 0;
