@@ -1,5 +1,3 @@
-import { HEADER_HEIGHT_PX } from "../constants";
-
 export default function Main({ children }) {
   return (
     <>
@@ -9,7 +7,6 @@ export default function Main({ children }) {
           position: relative;
           width: 70%;
           margin: 0 auto;
-          margin-top: ${HEADER_HEIGHT_PX}px;
           margin-bottom: 100px;
           box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
           box-sizing: border-box;

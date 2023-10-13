@@ -1,6 +1,8 @@
+import Main from "../components/main";
+
 export default function IndexPage({ data }) {
   return (
-    <>
+    <Main>
       <div className="container">
         {data.map((item, index) => (
           <div
@@ -28,7 +30,7 @@ export default function IndexPage({ data }) {
           }
         }
       `}</style>
-    </>
+    </Main>
   );
 }
 

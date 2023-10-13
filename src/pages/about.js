@@ -1,6 +1,8 @@
+import Main from "../components/main";
+
 export default function AboutPage() {
   return (
-    <>
+    <Main>
       <div className="container">
         <p className="title">ABOUT US</p>
         <div className="sentence">
@@ -29,6 +31,6 @@ export default function AboutPage() {
           }
         }
       `}</style>
-    </>
+    </Main>
   );
 }
