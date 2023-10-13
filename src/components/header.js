@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useCallback } from "react";
+import { HEADER_HEIGHT_PX } from "../constants";
 
 export default function Header() {
   const router = useRouter();
@@ -27,9 +28,18 @@ export default function Header() {
       </nav>
       <style jsx>{`
         nav {
+          z-index: 100;
+          position: fixed;
+          width: 100%;
+          height: ${HEADER_HEIGHT_PX}px;
+          top: 0;
+          left: 0;
           display: flex;
           justify-content: space-between;
-          border: 1px solid;
+          align-items: center;
+          border: 2px solid black;
+          background-color: white;
+          box-sizing: border-box;
           & span {
             padding: 14px;
             font-size: 22px;
