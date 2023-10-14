@@ -7,24 +7,40 @@ export default function Detail({ data }) {
       <div className="container">
         <h1>{data.list_name}</h1>
         <div className="book-grid">
-          {data.books.map((book) => (
-            <div className="book-grid__item">
-              <Image
-                src={book.book_image}
-                height={book.book_image_height}
-                width={book.book_image_width}
-              ></Image>
-              <h3>{book.title}</h3>
-              <span>{book.author}</span>
-            </div>
-          ))}
+          {data.books.map((book) => {
+            if (
+              !book.book_image ||
+              !book.book_image_height ||
+              !book.book_image_width
+            ) {
+              return null;
+            }
+
+            return (
+              <div className="book-grid__item">
+                <div className="book-grid__item__img-wrapper">
+                  <Image
+                    className="book-grid__item__img-wrapper__image"
+                    src={book.book_image}
+                    height={book.book_image_height}
+                    width={book.book_image_width}
+                    layout="fill"
+                    objectFit="cover"
+                  ></Image>
+                </div>
+                <h3 className="grid__item__title">{book.title}</h3>
+                <span className="grid__item__author">{book.author}</span>
+              </div>
+            );
+          })}
         </div>
       </div>
       <style jsx>{`
         .container {
+          margin-top: 50px;
           & > h1 {
-            color: red;
-            font-size: 32px;
+            color: black;
+            font-size: 38px;
             text-align: center;
           }
         }
@@ -33,10 +49,52 @@ export default function Detail({ data }) {
           display: grid;
           width: 1200px;
           grid-template-columns: repeat(4, 1fr);
-          margin: 0 auto;
-          margin-top: 30px;
-          gap: 30px;
-          background-color: rgba(255, 99, 71, 0.344);
+          margin: 50px auto;
+          margin-bottom: 100px;
+          gap: 70px;
+        }
+
+        .book-grid__item {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          background-color: white;
+          box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+          box-sizing: border-box;
+          -webkit-box-shadow: -0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: -0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+          border: 2px solid rgba(73, 73, 73, 0.65);
+          border-radius: 10px;
+          overflow: hidden;
+        }
+
+        .book-grid__item__img-wrapper {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 2/3;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-bottom: 2px solid rgba(73, 73, 73, 0.65);
+          border-radius: 0 0 8px 8px;
+        }
+
+        .book-grid__item__img-wrapper__image {
+        }
+
+        .grid__item__title {
+          text-align: center;
+          font-size: 20px;
+          font-weight: bold;
+          margin-top: 10px;
+          padding: 10px;
+        }
+
+        .grid__item__author {
+          font-size: 18px;
+          margin-bottom: 10px;
         }
       `}</style>
     </>
