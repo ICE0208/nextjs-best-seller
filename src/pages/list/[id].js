@@ -119,6 +119,7 @@ export default function Detail({ data }) {
           display: flex;
           justify-content: center;
           align-items: center;
+          transition: all 0.1s ease-in-out;
           & > a {
             text-decoration: none;
             color: black;

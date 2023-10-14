@@ -33,6 +33,10 @@ export default function IndexPage({ data }) {
             -webkit-box-shadow: --4px 6px 10px -4px rgba(0, 0, 0, 0.75);
             -moz-box-shadow: --4px 6px 10px -4px rgba(0, 0, 0, 0.75);
             cursor: pointer;
+            transition: all 0.1s ease-in-out;
+            &:hover {
+              transform: scale(1.02) rotate(2deg);
+            }
           }
         }
       `}</style>
