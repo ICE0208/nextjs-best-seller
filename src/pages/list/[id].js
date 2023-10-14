@@ -36,7 +36,7 @@ export default function Detail({ data }) {
                     href={book.buy_links[0].url}
                     target="_blank"
                   >
-                    Pruchase &rarr;
+                    Pruchase
                   </a>
                 </div>
               </div>
@@ -105,6 +105,25 @@ export default function Detail({ data }) {
           font-size: 18px;
           margin-bottom: 10px;
           flex-grow: 1;
+        }
+
+        .grid__item__link {
+          width: 90px;
+          height: 38px;
+          border: 3px solid black;
+          border-radius: 6px;
+          background-color: rgba(244, 255, 191, 0.836);
+          box-sizing: border-box;
+          margin-top: 6px;
+          margin-bottom: 12px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          & > a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+          }
         }
       `}</style>
     </>
