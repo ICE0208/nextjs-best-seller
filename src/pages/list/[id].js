@@ -11,7 +11,8 @@ export default function Detail({ data }) {
             if (
               !book.book_image ||
               !book.book_image_height ||
-              !book.book_image_width
+              !book.book_image_width ||
+              !book.buy_links?.length > 0
             ) {
               return null;
             }
@@ -30,6 +31,14 @@ export default function Detail({ data }) {
                 </div>
                 <h3 className="grid__item__title">{book.title}</h3>
                 <span className="grid__item__author">{book.author}</span>
+                <div className="grid__item__link">
+                  <a
+                    href={book.buy_links[0].url}
+                    target="_blank"
+                  >
+                    Pruchase &rarr;
+                  </a>
+                </div>
               </div>
             );
           })}
@@ -95,6 +104,7 @@ export default function Detail({ data }) {
         .grid__item__author {
           font-size: 18px;
           margin-bottom: 10px;
+          flex-grow: 1;
         }
       `}</style>
     </>
